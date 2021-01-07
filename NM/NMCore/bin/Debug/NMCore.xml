@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NMCore</name>
+    </assembly>
+    <members>
+        <member name="T:IvanovAC.NM.BoundaryValueProblem1D">
+            <summary>
+            Содержит методы решения краевой задачи для обыкновенного дифференциального уравнения
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ThomasAlgoritm(System.Double[],System.Double[],System.Double[],System.Double[],System.Double,System.Double)">
+            <summary>
+            Алгоритм метода левой прогонки
+            </summary>
+            <param name="A">Заданный массив</param>
+            <param name="B">Заданный массив</param>
+            <param name="C">Заданный массив</param>
+            <param name="F">Заданный массив</param>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="u1"></param>
+            <param name="u2"></param>
+            <returns>масиив решений для дифференциального уравнения</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ThomasAlgoritm(System.Double[],System.Double[],System.Double[],System.Double[],System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Алгоритм метода левой прогонки
+            </summary>
+            <param name="A">Заданный массив</param>
+            <param name="B">Заданный массив</param>
+            <param name="C">Заданный массив</param>
+            <param name="F">Заданный массив</param>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="u1"></param>
+            <param name="u2"></param>
+            <returns>масиив решений для дифференциального уравнения</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.CheckThomasAlgorithm">
+            <summary>
+            Проверка метода левой прогонки
+            </summary>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(System.Double,System.Double,System.Int32,System.Int32,System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.AnalyticSolveHeatEquation(System.Double,System.Double,System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod2(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.GetCollacationPoints(System.Double,System.Double,System.Int32)">
+            <summary>
+            Вычисляет точки коллакации
+            </summary>
+            <param name="a">Левый конец отрезка.</param>
+            <param name="b">Правый конец отрезка.</param>
+            <param name="n">Количество отрезков разбиения (количество узлов равно N + 1).</param> 
+            <returns>Массив узлов.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.Ly(System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},IvanovAC.NM.IBasisFunction)">
+            <summary>
+            Возвращает значение левой части ОДУ
+            y''+p(x)y'+q(x)y=f(x) при подстановке функции y(x).
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <param name="p">Функция при производной y'.</param>
+            <param name="q">Функция при y.</param> 
+            <param name="y">Функция, подставляемая в левую часть ОДУ.</param>
+            <returns>Значение левой части.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ScalarProduct(System.Double[],System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},IvanovAC.NM.IBasisFunction[],System.Int32,System.Int32)">
+            <summary>
+            Скалярное произведение для диск. мет. наим. квад.       
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <param name="p">Функция при производной y'.</param>
+            <param name="q">Функция при y.</param> 
+            <param name="y">Функция, подставляемая в левую часть ОДУ.</param>
+            <returns>Значение левой части.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ScalarProductRight(System.Double[],System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},IvanovAC.NM.IBasisFunction[],System.Int32)">
+            <summary>
+            Скалярное произведение для правой части диск. мет. наим. квад.       
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <param name="p">Функция при производной y'.</param>
+            <param name="q">Функция при y.</param> 
+            <param name="y">Функция, подставляемая в левую часть ОДУ.</param>
+            <returns>Значение левой части.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.CollocationMethod(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},IvanovAC.NM.IBasisFunction[],IvanovAC.NM.SlauSolver)">
+            <summary>
+            Метод коллакации
+            </summary>
+            <param name="A">Левый конец отрезка</param>
+            <param name="B">Правый конец отрезка</param>
+            <param name="ya">Значение функции в точке А</param>
+            <param name="yb">Значение функции в точке В</param>
+            <param name="p">Функция в уравнении</param>
+            <param name="q">Функция в уравнении</param>
+            <param name="f">Правая часть уравнения</param>
+            <param name="y">Масиив базисных функций</param>
+            <param name="slausolver">Объект решения СЛАУ</param>
+            <returns>Массив коэффициентов</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.LeastSquaresMethod(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},IvanovAC.NM.IBasisFunction[],IvanovAC.NM.SlauSolver)">
+            <summary>
+            Дискретный метод наименьших квадратов
+            </summary>
+            <param name="A">Левый конец отрезка</param>
+            <param name="B">Правый конец отрезка</param>
+            <param name="ya">Значение функции в точке А</param>
+            <param name="yb">Значение функции в точке В</param>
+            <param name="p">Функция в уравнении</param>
+            <param name="q">Функция в уравнении</param>
+            <param name="f">Правая часть уравнения</param>
+            <param name="y">Масиив базисных функций</param>
+            <param name="slausolver">Объект решения СЛАУ</param>
+            <returns>Массив коэффициентов</returns>
+        </member>
+        <member name="T:IvanovAC.NM.CauchyProblem">
+            <summary>
+            Содержит методы решения задачи Коши для обыкновенного дифференциального уравнения
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.CauchyProblem.SimpleEuler(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)">
+            <summary>
+            Решает задачу Коши для обыкновенного дифференциального уравнения
+            y'(x)=F(x,y)
+            простейшим методом Эйлера на отрезке [A, B].
+            </summary>
+            <param name="A">Левый конец отрезка.</param>
+            <param name="B">Правый конец отрезка.</param>
+            <param name="Y">Значение искомой функции y в начальной точке A.</param>
+            <param name="F">Правая часть уравнения.</param>
+            <param name="N">Количество отрезков сетки (количество узлов равно N + 1).</param>
+            <returns>Коллекция точек, задающих решение.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.CauchyProblem.Discretization(System.Double,System.Double,System.Int32)">
+            <summary>
+            Разбивает отрезок [A, B] на N равных частей и возвращает массив узлов.
+            </summary>
+            <param name="A">Левый конец отрезка.</param>
+            <param name="B">Правый конец отрезка.</param>
+            <param name="N">Количество отрезков разбиения (количество узлов равно N + 1).</param> 
+            <returns>Массив узлов.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.CauchyProblem.CorrectedEuler(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)">
+            <summary>
+            Решает задачу Коши для обыкновенного дифференциального уравнения
+            y'(x)=F(x,y)
+            исправленным методом Эйлера на отрезке [A, B].
+            </summary>
+            <param name="A">Левый конец отрезка.</param>
+            <param name="B">Правый конец отрезка.</param>
+            <param name="Y">Значение искомой функции y в начальной точке A.</param>
+            <param name="F">Правая часть уравнения.</param>
+            <param name="N">Количество отрезков сетки (количество узлов равно N + 1).</param>
+            <returns>Коллекция точек, задающих решение.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.CauchyProblem.ModifiedEuler(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)">
+            <summary>
+            Решает задачу Коши для обыкновенного дифференциального уравнения
+            y'(x)=F(x,y)
+            модифицированным методом Эйлера на отрезке [A, B].
+            </summary>
+            <param name="A">Левый конец отрезка.</param>
+            <param name="B">Правый конец отрезка.</param>
+            <param name="Y">Значение искомой функции y в начальной точке A.</param>
+            <param name="F">Правая часть уравнения.</param>
+            <param name="N">Количество отрезков сетки (количество узлов равно N + 1).</param>
+            <returns>Коллекция точек, задающих решение.</returns>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.AnalyticSolve(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.Simpson(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.RungeKutta4(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.IterativeEuler(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32,System.Double)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.PredictorCorrector2(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32,System.Double)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.Milne(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32,System.Double)" -->
+        <member name="M:IvanovAC.NM.CauchyProblem.ModifiedEulerNum(System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32,System.Int32)">
+            <summary>
+            Модифицированный метод Эйлера с определенным количеством точек в результате
+            y'(x)=F(x,y)
+            модифицированным методом Эйлера на отрезке [A, B].
+            </summary>
+            <param name="A">Левый конец отрезка.</param>
+            <param name="B">Правый конец отрезка.</param>
+            <param name="count">Количество точек в конечном массиве</param>
+            <param name="Y">Значение искомой функции y в начальной точке A.</param>
+            <param name="F">Правая часть уравнения.</param>
+            <param name="N">Количество отрезков сетки (количество узлов равно N + 1).</param>
+            <returns>Коллекция точек, задающих решение.</returns>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.FiniteDiffMethod1(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.AnalyticSolveDiff2(System.Double,System.Double,System.Double,System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.CauchyProblem.FiniteDiffMethod2(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <member name="M:IvanovAC.NM.ConjugateGradientSolver.Solve(System.Double[0:,0:],System.Double[])">
+            <summary>
+            Решает СЛАУ.
+            </summary>
+            <param name="A">Матрица коэффициентов.</param>
+            <param name="b">Правая часть.</param>
+            <returns>Вектор неизвестных - решение СЛАУ.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.FirstTypeBasisFunction">
+            <summary>
+            Базисная функция для граничного условия первого рода.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypeBasisFunction.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Базисная функция для граничного условия первого рода.
+            </summary>
+            <param name="a">Левый конец отрезка.</param>
+            <param name="b">Правый конец отрезка.</param>
+            <param name="ya">Значение функции в точке a.</param>
+            <param name="yb">Значение функции в точке b.</param>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypeBasisFunction.Function(System.Double)">
+            <summary>
+            Возвращает значение базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypeBasisFunction.FirstDerivative(System.Double)">
+            <summary>
+            Возвращает значение первой производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение первой производной базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypeBasisFunction.SecondDerivative(System.Double)">
+            <summary>
+            Возвращает значение второй производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение второй производной базисной функции.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.FirstTypePeriodicBasisFunction">
+            <summary>
+            Периодическая базисная функция
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePeriodicBasisFunction.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            Базисная функция для граничного условия первого рода.
+            </summary>
+            <param name="a">Левый конец отрезка.</param>
+            <param name="b">Правый конец отрезка.</param>
+            <param name="ya">Значение функции в точке a.</param>
+            <param name="yb">Значение функции в точке b.</param>
+            <param name="j">Счетчик</param>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePeriodicBasisFunction.Function(System.Double)">
+            <summary>
+            Возвращает значение базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>       
+            <returns>Значение базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePeriodicBasisFunction.FirstDerivative(System.Double)">
+            <summary>
+            Возвращает значение первой производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение первой производной базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePeriodicBasisFunction.SecondDerivative(System.Double)">
+            <summary>
+            Возвращает значение второй производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение второй производной базисной функции.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.FirstTypePolynomialBasisFunction">
+            <summary>
+            Полиномиальная базисная функция
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePolynomialBasisFunction.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32)">
+            <summary>
+            Базисная функция для граничного условия первого рода.
+            </summary>
+            <param name="a">Левый конец отрезка.</param>
+            <param name="b">Правый конец отрезка.</param>
+            <param name="ya">Значение функции в точке a.</param>
+            <param name="yb">Значение функции в точке b.</param>
+            <param name="j">Степень полинома</param>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePolynomialBasisFunction.Function(System.Double)">
+            <summary>
+            Возвращает значение базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>       
+            <returns>Значение базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePolynomialBasisFunction.FirstDerivative(System.Double)">
+            <summary>
+            Возвращает значение первой производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение первой производной базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.FirstTypePolynomialBasisFunction.SecondDerivative(System.Double)">
+            <summary>
+            Возвращает значение второй производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение второй производной базисной функции.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.GaousseSolver">
+            <summary>
+            Метод Гаусса решения СЛАУ.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.GaousseSolver.Solve(System.Double[0:,0:],System.Double[])">
+            <summary>
+            Решает СЛАУ.
+            </summary>
+            <param name="a">Матрица коэффициентов.</param>
+            <param name="b">Правая часть.</param>
+            <returns>Вектор неизвестных - решение СЛАУ.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.IBasisFunction">
+            <summary>
+            Задает функциональность класса, реализующего базисную функцию.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.IBasisFunction.Function(System.Double)">
+            <summary>
+            Возвращает значение базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.IBasisFunction.FirstDerivative(System.Double)">
+            <summary>
+            Возвращает значение первой производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение первой производной базисной функции.</returns>
+        </member>
+        <member name="M:IvanovAC.NM.IBasisFunction.SecondDerivative(System.Double)">
+            <summary>
+            Возвращает значение второй производной базисной функции.
+            </summary>
+            <param name="x">Значение аргумента.</param>
+            <returns>Значение второй производной базисной функции.</returns>
+        </member>
+        <member name="T:IvanovAC.NM.SlauSolver">
+            <summary>
+            Общий предок классов, реализующих методы решения
+            систем линейных алгебраических уравнений (СЛАУ).
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.Solve(System.Double[0:,0:],System.Double[])">
+            <summary>
+            Решает СЛАУ.
+            </summary>
+            <param name="a">Матрица коэффициентов.</param>
+            <param name="b">Правая часть.</param>
+            <returns>Вектор неизвестных - решение СЛАУ.</returns>
+        </member>
+        <member name="P:IvanovAC.NM.SlauSolver.RequiredRelativeError">
+            <summary>
+            Допустимая относительная погрешность вычислений (невязка).
+            </summary>
+        </member>
+        <member name="P:IvanovAC.NM.SlauSolver.RelativeError">
+            <summary>
+            Фактическая относительная погрешность вычислений (невязка).
+            </summary>
+        </member>
+        <member name="P:IvanovAC.NM.SlauSolver.MaxIterationCount">
+            <summary>
+            Максимально возможное число итераций, при достижении которого решение СЛАУ будет прервано.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.NM.SlauSolver.IterationCount">
+            <summary>
+            Число итераций, выполненное в процессе решения СЛАУ.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.NM.SlauSolver.ErrorMessage">
+            <summary>
+            Возвращает ошибки решения
+            </summary>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.MultMatrixVector(System.Double[0:,0:],System.Double[])">
+            <summary>
+            Перемножает матрицу и вектор
+            </summary>
+            <param name="A"></param>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.ScalarProduct(System.Double[],System.Double[])">
+            <summary>
+            Вычисляет скалярное произведение
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.MultMatrixValue(System.Double[],System.Double)">
+            <summary>
+            Перемножает матрицу и число
+            </summary>
+            <param name="A"></param>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.AddVector(System.Double[],System.Double[])">
+            <summary>
+            Складывает два вектора
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.SubVector(System.Double[],System.Double[])">
+            <summary>
+            Вычитает первый вектор из второго
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IvanovAC.NM.SlauSolver.Norm(System.Double[])">
+            <summary>
+            Вычисляет норму вектора
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\bin\Debug\NMCore.xml
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\bin\Debug\NMCore.dll
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\bin\Debug\NMCore.pdb
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\obj\Debug\NMCore.csprojAssemblyReference.cache
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\obj\Debug\NMCore.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\obj\Debug\NMCore.dll
+C:\Users\User\source\repos\IvanovAC\NM\NMCore\obj\Debug\NMCore.pdb

@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ControlsCore</name>
+    </assembly>
+    <members>
+        <member name="M:IvanovAC.Controls.CustListPointF.#ctor(System.String,System.Drawing.Color,System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Содержит информацию о т функции.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="List">Список точек.</param>
+        </member>
+        <member name="P:IvanovAC.Controls.CustListPointF.Legend">
+            <summary>
+            Возвращает название графика.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.CustListPointF.LineColor">
+            <summary>
+            Возвращает либо задает цвет графика.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.CustListPointF.List">
+            <summary>
+            Возвращает либо задает список точек.
+            </summary>
+        </member>
+        <member name="T:IvanovAC.Controls.Plot">
+            <summary>
+            Элемент управления, предназначенный для отображения графиков.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.#ctor">
+            <summary>
+            Элемент управления, предназначеннный для отображения графиков.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.Draw">
+            <summary>
+            Рисует графики.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.DrawAxes(System.Drawing.Graphics)">
+            <summary>
+            Рисует оси координат.
+            </summary>
+            <param name="Graphics">Холст.</param>
+            <param name="Pen">Кисть.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.DrawFunctionFromX(System.Drawing.Graphics,System.Drawing.Pen,System.Func{System.Double,System.Double})">
+            <summary>
+            Рисует график указанной функции y(x).
+            </summary>
+            <param name="Graphics">Холст.</param>
+            <param name="Pen">Кисть.</param>
+            <param name="Function">Функция, график которой нужно построить.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.DrawPointsFromX(System.Drawing.Graphics,System.Drawing.Pen,System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Рисует график по заданным точкам.
+            </summary>
+            <param name="Graphics">Холст.</param>
+            <param name="Pen">Кисть.</param>
+            <param name="points">Набор точек, по которым нужно построить график.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.UpdateItem(System.String,System.Drawing.Color,System.Func{System.Double,System.Double})">
+            <summary>
+            Обновляет информацию о графике с указанным названием.
+            Если графика с таким названием нет, то он будет создан.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="Func">Функция y(x).</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.UpdatePoints(System.String,System.Drawing.Color,System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Обновляет информацию о графике с указанным названием.
+            Если графика с таким названием нет, то он будет создан.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="Points">Набор точек, по которым нужно построить график.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.AddPoints(System.String,System.Drawing.Color,System.Collections.Generic.List{System.Drawing.PointF},System.Int32)">
+            <summary>
+            Обновляет информацию о графике с указанным названием.
+            Если графика с таким названием нет, то он будет создан.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="Points">Набор точек, по которым нужно построить график.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.Clear">
+            <summary>
+            Удаляет все элементы из коллекции
+            </summary>    
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.SetCamera(System.Drawing.Point,System.Double,System.Double)">
+            <summary>
+            Задает новые параметры начала координат и масштаба,
+            перерисовывая график.
+            </summary>
+            <param name="Center">Новый центр взгляда в координатах монитора.
+            </param>
+            <param name="ScaleX">Новый масштаб по оси X.</param>
+            <param name="ScaleY">Новый масштаб по оси Y.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.SetLegendPanel">
+            <summary>
+            Обновляет состояние панели "Легенда".
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.WidthPictureBox">
+            <summary>
+            Возвращает ширину pictureBoxPlot
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.HeightPictureBox">
+            <summary>
+            Возвращает высоту pictureBoxPlot
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.CenterPoint">
+            <summary>
+            Возвращает либо задает центр мировых координат на плоскости контрола.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.MinPix">
+            <summary>
+            Возвращает либо задает длину стороны квадрата в пикселях,
+            перемещение курсора внутри которого будет считаться точечным действием.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.ScaleX">
+            <summary>
+            Возвращает либо задает коэффициент масштабирования по оси X
+            (задает число пикселей, соответствующее единице измерения вдоль оси).
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.ScaleY">
+            <summary>
+            Возвращает либо задает коэффициент масштабирования по оси Y
+            (задает число пикселей, соответствующее единице измерения вдоль оси).
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.XName">
+            <summary>
+            Возвращает либо задает название величины, откладываемой по оси X.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.XUnits">
+            <summary>
+            Возвращает либо задает название единицы измерения по оси X.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.YName">
+            <summary>
+            Возвращает либо задает название величины, откладываемой по оси Y.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.Plot.YUnits">
+            <summary>
+            Возвращает либо задает название единицы измерения по оси Y.
+            </summary>
+        </member>
+        <member name="F:IvanovAC.Controls.Plot.components">
+            <summary> 
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:IvanovAC.Controls.Plot.InitializeComponent">
+            <summary> 
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="T:IvanovAC.Controls.PlotItem">
+            <summary>
+            Содержит информацию о графике функции.
+            </summary>
+        </member>
+        <member name="M:IvanovAC.Controls.PlotItem.#ctor(System.String,System.Drawing.Color,System.Func{System.Double,System.Double})">
+            <summary>
+            Содержит информацию о графике функции.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="Func">Функция y(x).</param>
+        </member>
+        <member name="P:IvanovAC.Controls.PlotItem.Legend">
+            <summary>
+            Возвращает название графика.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.PlotItem.LineColor">
+            <summary>
+            Возвращает либо задает цвет графика.
+            </summary>
+        </member>
+        <member name="P:IvanovAC.Controls.PlotItem.Function">
+            <summary>
+            Возвращает либо задает функцию y(x).
+            </summary>
+        </member>
+    </members>
+</doc>
