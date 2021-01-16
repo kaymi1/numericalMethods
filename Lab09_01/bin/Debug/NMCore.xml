@@ -9,7 +9,21 @@
             Содержит методы решения краевой задачи для обыкновенного дифференциального уравнения
             </summary>
         </member>
-        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ThomasAlgorithm(System.Double[],System.Double[],System.Double[],System.Double[],System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ThomasAlgoritm(System.Double[],System.Double[],System.Double[],System.Double[],System.Double,System.Double)">
+            <summary>
+            Алгоритм метода левой прогонки
+            </summary>
+            <param name="A">Заданный массив</param>
+            <param name="B">Заданный массив</param>
+            <param name="C">Заданный массив</param>
+            <param name="F">Заданный массив</param>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="u1"></param>
+            <param name="u2"></param>
+            <returns>масиив решений для дифференциального уравнения</returns>
+        </member>
+        <member name="M:IvanovAC.NM.BoundaryValueProblem1D.ThomasAlgoritm(System.Double[],System.Double[],System.Double[],System.Double[],System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Алгоритм метода левой прогонки
             </summary>
@@ -29,6 +43,8 @@
             </summary>
         </member>
         <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(System.Double,System.Double,System.Int32,System.Int32,System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.AnalyticSolveHeatEquation(System.Double,System.Double,System.Int32)" -->
         <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod2(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
         <member name="M:IvanovAC.NM.BoundaryValueProblem1D.GetCollacationPoints(System.Double,System.Double,System.Int32)">
             <summary>

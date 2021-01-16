@@ -75,16 +75,16 @@ namespace IvanovAC.NM
             double[] y = new double[n];
             double[] a = new double[n];
             double[] b = new double[n];
-            a[0] = -C[0]/B[0];
-            b[0] = F[0]/B[0];
+            a[0] = v1;
+            b[0] = u1;
 
-            for (int i = 1; i < n; i++)
+            for (int i = 0; i < n - 1; i++)
             {
-                a[i] = -C[i] / (A[i] * a[i - 1] + B[i]);
-                b[i] = (F[i] - A[i] * b[i - 1]) / (A[i] * a[i - 1] + B[i]);
+                a[i + 1] = B[i] / (C[i] - a[i] * A[i]);
+                b[i + 1] = (b[i] * A[i] + F[i]) / (C[i] - a[i] * A[i]);
             }
 
-            y[n - 1] = (F[n - 1] - A[n - 1] * b[n - 2]) / (A[n - 1] * a[n - 2] + B[n - 1]);
+            y[n - 1] = (u2 + b[n-1] * v2) / (1 - a[n-1] * v2); 
             
             for (int i = n - 2; i > 0; i--)
             {
@@ -183,7 +183,7 @@ namespace IvanovAC.NM
         /// <param name="F">Правая часть уравнения.</param>
         /// <param name="N">Количество отрезков сетки (количество узлов равно N + 1).</param>
         /// <returns>Коллекция точек, задающих решение.</returns>
-        public static List<PointF[]> FiniteDiffMethodForHeatEquation(double A, double B, int N, int u1, int u2)
+        public static List<PointF[]> FiniteDiffMethodForHeatEquation(double A, double B, int N, int u1, int u2, double l1)
         {
             if (A >= B)
             {
@@ -210,7 +210,7 @@ namespace IvanovAC.NM
             /*Начальные условия для основной задачи*/
             for (int i = 0; i < x.Length; i++)
             {
-                if (x[i] <= 0.1)
+                if (x[i] <= l1)
                     ustart[i] = u1;
                 else if (x[i] > 0.1)
                     ustart[i] = u2;
@@ -219,7 +219,7 @@ namespace IvanovAC.NM
             for (int i = 0; i < x.Length; i++)
             {
                 ustart[i] = 4 * Math.Cos(2 * x[i]) + 4 * Math.Sin(2 * x[i]) + 4;
-            }            */     
+            }*/     
 
             double[] a = new double[N + 1];
             double[] b = new double[N + 1];

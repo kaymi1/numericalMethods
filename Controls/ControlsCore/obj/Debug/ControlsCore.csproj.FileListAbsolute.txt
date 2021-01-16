@@ -7,3 +7,12 @@ C:\Users\User\source\repos\IvanovAC\Controls\ControlsCore\obj\Debug\ControlsCore
 C:\Users\User\source\repos\IvanovAC\Controls\ControlsCore\obj\Debug\ControlsCore.dll
 C:\Users\User\source\repos\IvanovAC\Controls\ControlsCore\obj\Debug\ControlsCore.pdb
 C:\Users\User\source\repos\IvanovAC\Controls\ControlsCore\obj\Debug\ControlsCore.csprojAssemblyReference.cache
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\bin\Debug\ControlsCore.xml
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\bin\Debug\ControlsCore.dll
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\bin\Debug\ControlsCore.pdb
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\ControlsCore.csprojAssemblyReference.cache
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\IvanovAC.Controls.Plot.resources
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\ControlsCore.csproj.GenerateResource.cache
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\ControlsCore.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\ControlsCore.dll
+C:\Users\User\Desktop\cursach\numericalMethods\Controls\ControlsCore\obj\Debug\ControlsCore.pdb

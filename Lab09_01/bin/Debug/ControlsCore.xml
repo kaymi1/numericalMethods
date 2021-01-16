@@ -83,6 +83,15 @@
             <param name="LineColor">Цвет графика.</param>
             <param name="Points">Набор точек, по которым нужно построить график.</param>
         </member>
+        <member name="M:IvanovAC.Controls.Plot.AddPoints(System.String,System.Drawing.Color,System.Collections.Generic.List{System.Drawing.PointF})">
+            <summary>
+            Обновляет информацию о графике с указанным названием.
+            Если графика с таким названием нет, то он будет создан.
+            </summary>
+            <param name="Legend">Название графика.</param>
+            <param name="LineColor">Цвет графика.</param>
+            <param name="Points">Набор точек, по которым нужно построить график.</param>
+        </member>
         <member name="M:IvanovAC.Controls.Plot.Clear">
             <summary>
             Удаляет все элементы из коллекции

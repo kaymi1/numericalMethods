@@ -35,6 +35,7 @@ namespace problem2
             this.plot1.ScaleY = 110000;               
         }
 
+        /* </ Начальные данные >  */
         private int m = 1;
         private int n = 3;
 
@@ -53,25 +54,7 @@ namespace problem2
 
         private double A = 0;
         private double B = 1;
-
-
-        
-        private double b0test(double T, double X)
-        {
-            return 0;
-        }
-        private double bktest(double T, double X)
-        {
-            return 1;
-        }
-        private double c0test(double T, double X)
-        {
-            return 0;
-        }
-        private double cktest(double T, double X)
-        {
-            return 2*Math.Exp(-4*T) + 4;
-        }       
+        /* </ Начальные данные >  */ 
 
         private void Button_Click(object sender, EventArgs e)
         {
@@ -80,24 +63,22 @@ namespace problem2
            
             if ((string)this.choiceProblemBox.SelectedItem == "Тестовая задача")
             {
-                int i = 0;
-                List<PointF[]> pointsList = BoundaryValueProblem1D.AnalyticSolveHeatEquation(A, B, items); //101
+
+                List<PointF[]> pointsList = BoundaryValueProblem1D.AnalyticSolveHeatEquation(A, B, items); 
                 foreach(PointF[] pointsItem in pointsList)
                 {
                     List<PointF> points = new List<PointF>(pointsItem);
-                    this.plot1.AddPoints("Аналитическое решение", Color.Black, points, i);
+                    this.plot1.AddPoints("Аналитическое решение", Color.Black, points);
                     this.plot1.Draw();
-                    i++;
+
                 }
 
-                i = 0;
-                pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2); //122
+                pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2, l1); 
                 foreach (PointF[] pointsItem in pointsList)
                 {
                     List<PointF> points = new List<PointF>(pointsItem);
-                    this.plot1.AddPoints("Разностный метод", Color.Red, points, i);
+                    this.plot1.AddPoints("Разностный метод", Color.Red, points);
                     this.plot1.Draw();
-                    i++;
                 }
             }
             else if ((string)this.choiceProblemBox.SelectedItem == "Тестовая задача (дискр. м. времени)")
@@ -119,7 +100,7 @@ namespace problem2
                 this.plot1.Draw();
                         
                 
-                pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2);
+                pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2, l1);
                 points = new List<PointF>(pointsList[0]);
                 this.plot1.UpdatePoints("t = 0 числ. реш.", Color.Tan, points);
                 this.plot1.Draw();
@@ -136,20 +117,18 @@ namespace problem2
             }
             else if ((string)this.choiceProblemBox.SelectedItem == "Основная задача")
             {
-                int i = 0;
-                List<PointF[]> pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2);
+                List<PointF[]> pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2, l1);
                 foreach (PointF[] pointsItem in pointsList)
                 {
                     List<PointF> points = new List<PointF>(pointsItem);
-                    this.plot1.AddPoints("Разностный метод", Color.Red, points, i);
+                    this.plot1.AddPoints("Разностный метод", Color.Red, points);
                     this.plot1.Draw();
-                    i++;
                 }
             }
             else if ((string)this.choiceProblemBox.SelectedItem == "Основная задача (дискр. м. времени)")
             {                
                 ColorGraphic color = new ColorGraphic();
-                List<PointF[]> pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2); 
+                List<PointF[]> pointsList = BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(A, B, items, u1, u2, l1); 
                 List<PointF> points = new List<PointF>(pointsList[0]);
                 this.plot1.UpdatePoints("t = 0", Color.Black, points);
                 this.plot1.Draw();
@@ -164,6 +143,11 @@ namespace problem2
                 this.plot1.UpdatePoints("t = tend", Color.Red, points);
                 this.plot1.Draw();
             }
+        }
+
+        private void plot1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

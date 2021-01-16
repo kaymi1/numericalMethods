@@ -95,14 +95,14 @@
             this.plot1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.plot1.CenterPoint = new System.Drawing.Point(610363, 45952);
+            this.plot1.CenterPoint = new System.Drawing.Point(1525908, 94967);
             this.plot1.HeightPictureBox = 372;
             this.plot1.Location = new System.Drawing.Point(0, 58);
             this.plot1.MinimumSize = new System.Drawing.Size(320, 200);
             this.plot1.MinPix = 5;
             this.plot1.Name = "plot1";
-            this.plot1.ScaleX = 3814.697265625D;
-            this.plot1.ScaleY = 589.92134791730007D;
+            this.plot1.ScaleX = 9536.7431640625D;
+            this.plot1.ScaleY = 1219.1707481895642D;
             this.plot1.Size = new System.Drawing.Size(800, 392);
             this.plot1.TabIndex = 0;
             this.plot1.WidthPictureBox = 800;
@@ -110,6 +110,7 @@
             this.plot1.XUnits = "in";
             this.plot1.YName = "Y";
             this.plot1.YUnits = "in";
+            this.plot1.Load += new System.EventHandler(this.plot1_Load);
             // 
             // Form1
             // 

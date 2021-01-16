@@ -43,7 +43,7 @@
             </summary>
         </member>
         <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
-        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(System.Double,System.Double,System.Int32,System.Int32,System.Int32)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethodForHeatEquation(System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double)" -->
         <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.AnalyticSolveHeatEquation(System.Double,System.Double,System.Int32)" -->
         <!-- Проигнорирован некорректный комментарий XML для члена "M:IvanovAC.NM.BoundaryValueProblem1D.FiniteDiffMethod2(System.Double,System.Double,System.Double,System.Double,System.Func{System.Double,System.Double,System.Double},System.Int32)" -->
         <member name="M:IvanovAC.NM.BoundaryValueProblem1D.GetCollacationPoints(System.Double,System.Double,System.Int32)">

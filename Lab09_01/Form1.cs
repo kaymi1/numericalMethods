@@ -12,12 +12,16 @@ namespace Lab09_01
         {
             InitializeComponent();
             this.plot1.CenterPoint = new Point(this.plot1.WidthPictureBox / 2, this.plot1.HeightPictureBox / 2);
-            //this.plot1.ScaleX = 250000;
-            //this.plot1.ScaleY = 150000;
+            /* Масштаб для основной задачи 
+            this.plot1.ScaleX = 250000;
+            this.plot1.ScaleY = 150000;*/
+
+            /* Масштаб для тестовой задачи */
             this.plot1.ScaleX = 700000;
             this.plot1.ScaleY = 110000;
         }
 
+        /* < Начальные данные >  */ 
         private int m = 1;
         private int n = 3;
 
@@ -29,8 +33,8 @@ namespace Lab09_01
         private double yb = -0.8;
 
         private double A = 0;
-        private double B = Math.Sqrt(2)/2;
-
+        private double B = 0.7;
+        /* </ Начальные данные >  */
 
         private double Ftest(double X, double Y)
         {
@@ -45,6 +49,7 @@ namespace Lab09_01
             return n;
         }
 
+
         private double Fmain(double X, double Y)
         {
             return 0;
@@ -57,6 +62,7 @@ namespace Lab09_01
         {
             return (a3) / (Math.Sqrt(1 - X * X));
         }
+
 
         private void Button_Click(object sender, EventArgs e)
         {
@@ -79,6 +85,16 @@ namespace Lab09_01
                 this.plot1.UpdatePoints("Разностный метод", Color.Black, points);
                 this.plot1.Draw();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void plot1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

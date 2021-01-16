@@ -24,7 +24,7 @@ namespace IvanovAC.Controls
         Dictionary<string, PlotItem> items;
         Dictionary<string, CustListPointF> points;
         Dictionary<string, CustListPointF> pointsColor;
-        List<CustListPointF> pointsList;
+        Dictionary<string, List<CustListPointF>> pointsList;
         Size oldSize; // Старый размер области рисования графика
         Point oldMousePos; // Начальная точка движения
 
@@ -39,7 +39,7 @@ namespace IvanovAC.Controls
             this.items = new Dictionary<string, PlotItem>();
             this.points = new Dictionary<string, CustListPointF>();
             this.oldSize = this.pictureBoxPlot.Size;
-            this.pointsList = new List<CustListPointF>();
+            this.pointsList = new Dictionary<string, List<CustListPointF>>();
             SetLegendPanel();
             MinPix = 5;
             ScaleX = 1;
@@ -105,19 +105,22 @@ namespace IvanovAC.Controls
                                 }
                             }
                         }
-                        /*// Рисование графиков по листу массивов
+                        // Рисование графиков по листу массивов
                         if (this.pointsList != null)
                         {
-                            foreach (CustListPointF pair in this.pointsList)
+                            foreach (KeyValuePair<string, List<CustListPointF>> pair in this.pointsList)
                             {
-                                CustListPointF item = pair;
-                                pen.Color = item.LineColor;
-                                if (item.List != null)
+                                List <CustListPointF> items = pair.Value;
+                                pen.Color = items[0].LineColor;
+                                foreach(CustListPointF item in items)
                                 {
-                                    this.DrawPointsFromX(graphics, pen, item.List);
+                                    if (item.List != null)
+                                    {
+                                        this.DrawPointsFromX(graphics, pen, item.List);
+                                    }
                                 }
                             }
-                        }*/
+                        }
                     }
                 }
                 this.pictureBoxPlot.Refresh();
@@ -435,13 +438,21 @@ namespace IvanovAC.Controls
         /// <param name="Legend">Название графика.</param>
         /// <param name="LineColor">Цвет графика.</param>
         /// <param name="Points">Набор точек, по которым нужно построить график.</param>
-        public void AddPoints(string Legend, Color LineColor, List<PointF> Points, int i)
+        public void AddPoints(string Legend, Color LineColor, List<PointF> Points)
         {
             CustListPointF item = new CustListPointF(Legend, LineColor, Points);                                      
-            this.pointsList.Add(item);
-            if(i == 0)
+            if (this.pointsList.ContainsKey(Legend))
             {
-                points.Add(Legend, item);
+                // Обновляем
+                this.pointsList[Legend].Add(item);
+            }
+            else
+            {
+                // Создаем новый
+                List<CustListPointF> list = new List<CustListPointF>();
+                list.Add(item);
+                this.pointsList.Add(Legend, list);
+                this.points.Add(Legend, item);
             }
             SetLegendPanel();
         }
@@ -531,6 +542,16 @@ namespace IvanovAC.Controls
                 this.dataGridViewLegend["ChartColor", i].Style.BackColor = pair.Value.LineColor;
                 i++;
             }
+
+            /*foreach (KeyValuePair<string, List<CustListPointF>> pair in this.pointsList)
+            {
+                CustListPointF item = pair.Value[0];
+                // Выводим название графика в ячейку "Легенда"
+                this.dataGridViewLegend["ChartLegend", i].Value = item.Legend;
+                // Закрашиваем цветом графика ячейку "Цвет"                
+                this.dataGridViewLegend["ChartColor", i].Style.BackColor = item.LineColor;
+                i++;
+            }*/
 
         }
 

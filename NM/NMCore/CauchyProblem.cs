@@ -602,10 +602,7 @@ namespace IvanovAC.NM
             for (int i = 1; i < points.Length; i++)
             {
                 points[i].X = (float)x[i];
-                //points[i].Y = (float)(Math.Log(Math.Exp(3 * points[i].X) + 1,Math.E) - 3 * points[i].X + Math.Log(2, Math.E) + Math.Exp(3 * points[i].X)* Math.Log(Math.Exp(3 * points[i].X) + 1, Math.E) - Math.Exp(3 * points[i].X) * 3 * points[i].X + 5 * Math.Log(2, Math.E) * Math.Exp(3 * points[i].X));
-                //points[i].Y = (float)(Math.Log(4, Math.E) + 1 + 3 * Math.Exp(3 * points[i].X) * Math.Log(4, Math.E) - Math.Exp(3 * points[i].X));
-                //points[i].Y = (float)((Math.Log(Math.Exp(3 * points[i].X) + 1, Math.E) - 3 * points[i].X) * (1 + Math.Exp(3 * points[i].X)) + Math.Log(2, Math.E) * (1 + 5 * Math.Exp(3 * points[i].X)));
-                //points[i].Y = (float)((Math.Log(2 * Math.Exp(points[i].X) + 1) - points[i].X) * (1 + 2 * Math.Exp(points[i].X)));
+                /* Аналитическое решение */
                 points[i].Y = (float)((-1.027 * Math.Sin((Math.Sqrt(11) / 2) * points[i].X) - 0.5 * Math.Cos((Math.Sqrt(11) / 2) * points[i].X)) * Math.Exp(-0.5 * points[i].X));
             }
 

@@ -28,32 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.plot1 = new IvanovAC.Controls.Plot();
             this.count = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.choiceProblemBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.plot1 = new IvanovAC.Controls.Plot();
             this.SuspendLayout();
-            // 
-            // plot1
-            // 
-            this.plot1.CenterPoint = new System.Drawing.Point(2500, 613);
-            this.plot1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plot1.HeightPictureBox = 358;
-            this.plot1.Location = new System.Drawing.Point(0, 72);
-            this.plot1.MinimumSize = new System.Drawing.Size(320, 200);
-            this.plot1.MinPix = 5;
-            this.plot1.Name = "plot1";
-            this.plot1.ScaleX = 15.625D;
-            this.plot1.ScaleY = 7.8674051550627784D;
-            this.plot1.Size = new System.Drawing.Size(800, 378);
-            this.plot1.TabIndex = 0;
-            this.plot1.WidthPictureBox = 800;
-            this.plot1.XName = "X";
-            this.plot1.XUnits = "in";
-            this.plot1.YName = "Y";
-            this.plot1.YUnits = "in";
             // 
             // count
             // 
@@ -107,6 +88,26 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Тип задачи";
             // 
+            // plot1
+            // 
+            this.plot1.CenterPoint = new System.Drawing.Point(3814770, 150024);
+            this.plot1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plot1.HeightPictureBox = 358;
+            this.plot1.Location = new System.Drawing.Point(0, 72);
+            this.plot1.MinimumSize = new System.Drawing.Size(320, 200);
+            this.plot1.MinPix = 5;
+            this.plot1.Name = "plot1";
+            this.plot1.ScaleX = 23841.85791015625D;
+            this.plot1.ScaleY = 1926.2632427045492D;
+            this.plot1.Size = new System.Drawing.Size(800, 378);
+            this.plot1.TabIndex = 0;
+            this.plot1.WidthPictureBox = 800;
+            this.plot1.XName = "X";
+            this.plot1.XUnits = "in";
+            this.plot1.YName = "Y";
+            this.plot1.YUnits = "in";
+            this.plot1.Load += new System.EventHandler(this.plot1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +121,7 @@
             this.Controls.Add(this.plot1);
             this.Name = "Form1";
             this.Text = "Решение краевой задачи для ОДУ методом конечных разностей";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
